@@ -1,9 +1,15 @@
 trigger:
 - master
 
+resources:
+  repositories:
+    - repository: templates
+      type: GitHub
+      name: divvun/divvun-ci-config
+      endpoint: fry
 
 jobs:
-  - template: spellers.yml
+  - template: repo/templates/spellers.yml@templates
     parameters:
       name: crk
       repositoryWin: "https://pahkat.uit.no/repo/windows"
@@ -16,9 +22,9 @@ jobs:
         - projectjjName: giella-crk
           path: usr/share/voikko/3/crk.zhfst
           name: crk-Latn
-        # - projectjjName: giella-crk
-        #   path: usr/share/voikko/3/crk-x-macron.zhfst
-        #   name: crk-Latn-x-macron
-        # - projectjjName: giella-crk
-        #   path: usr/share/voikko/3/crk-Cans.zhfst
-        #   name: crk-Cans
+        - projectjjName: giella-crk
+          path: usr/share/voikko/3/crk-x-macron.zhfst
+          name: crk-Latn-x-macron
+        - projectjjName: giella-crk
+          path: usr/share/voikko/3/crk-Cans.zhfst
+          name: crk-Cans
