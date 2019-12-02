@@ -1,23 +1,23 @@
 trigger:
-- master
+  - master
 
 resources:
   repositories:
     - repository: templates
       type: GitHub
       name: divvun/divvun-ci-config
-      endpoint: fry
+      endpoint: divvun-ci
 
 jobs:
   - template: repo/templates/spellers.yml@templates
     parameters:
       name: crk
-      repositoryWin: "https://pahkat.uit.no/repo/windows"
-      repositoryMac: "https://pahkat.uit.no/repo/macos"
+      repositoryWin: "https://pahkat.uit.no/repo/canada-win"
+      repositoryMac: "https://pahkat.uit.no/repo/canada-macos"
       humanName: "Plains Cree Speller"
-      uuidWin: '82C350D0-E688-4CBB-BDCE-54F3E6B956D7'
-      uuidWinMso: '9C5A39A8-B1C4-4A18-B53F-C28AF989B378'
-      uuidLO: '55004AE6-7CA6-4969-AD11-2BD4D0E6C92A'
+      uuidWin: "82C350D0-E688-4CBB-BDCE-54F3E6B956D7"
+      uuidWinMso: "9C5A39A8-B1C4-4A18-B53F-C28AF989B378"
+      uuidLO: "55004AE6-7CA6-4969-AD11-2BD4D0E6C92A"
       languages:
         - projectjjName: giella-crk
           path: usr/share/voikko/3/crk.zhfst
